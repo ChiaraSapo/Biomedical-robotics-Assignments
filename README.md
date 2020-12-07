@@ -9,3 +9,10 @@ Content: Matlab code and images.
 Analyze EEG data through Eeglab MATLAB tool.
 
 Content: tutorial on how to use eeglab and analyze the data.
+
+## Ass2
+Analyze EMG data through MATLAB.
+
+# Presentation
+Presentation on soft robotics in rehabilitation.
+
