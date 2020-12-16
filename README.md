@@ -1,5 +1,5 @@
 # Biomedical robotics Assignments
-All of the assignments require the use of MATLAB.
+All of the assignments were implemented in MATLAB. 
 
 ## Ass0
 Plot and recognize 3 types of biomedical signals: EEG, EMG, muscular.
@@ -16,3 +16,5 @@ Analyze EMG data through MATLAB.
 # Presentation
 Presentation on soft robotics in rehabilitation, in particular we focused on an article about a soft robotic glove to helpstroke surkivors in daily life activities.
 
+# Authors
+Chiara Saporetti, Aurora Bertino, Gabriele Reverberi, Sara Romano.
