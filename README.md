@@ -14,5 +14,5 @@ Content: tutorial on how to use eeglab and analyze the data.
 Analyze EMG data through MATLAB.
 
 # Presentation
-Presentation on soft robotics in rehabilitation.
+Presentation on soft robotics in rehabilitation, in particular we focused on an article about a soft robotic glove to helpstroke surkivors in daily life activities.
 
