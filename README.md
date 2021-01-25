@@ -2,9 +2,9 @@
 All of the assignments were implemented in MATLAB. 
 
 ## Ass0
-Plot and recognize 3 types of biomedical signals: EEG, EMG, muscular.
+Plot and recognize 3 types of biomedical signals: EEG, EMG, muscular. 
 
-Content: Matlab code and images.
+Content: Matlab code and data to try it.
 ## Ass1
 Analyze EEG data through Eeglab MATLAB tool.
 
