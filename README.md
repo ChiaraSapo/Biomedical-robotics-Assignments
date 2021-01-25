@@ -13,6 +13,13 @@ Content: tutorial on how to use eeglab and analyze the data.
 ## Ass2
 Analyze EMG data through MATLAB.
 
+Content: Matlab code and data to try it.
+
+## Ass3
+Move computer cursor via smartphone movement data through Simulink.
+
+Content: Matlab code, Simulink model, final report.
+
 # Presentation
 Presentation on soft robotics in rehabilitation, in particular we focused on an article about a soft robotic glove to helpstroke surkivors in daily life activities.
 
