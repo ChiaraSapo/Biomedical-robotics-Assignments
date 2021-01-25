@@ -5,16 +5,16 @@
     % Sara Romano S4802844
 
 
-close all
-clear all
-clc
+% close all
+% clear all
+% clc
 
 %% Given data
 
 % Load data
-Data1 = load('data1.mat');
-Data2 = load('data2.mat');
-Data3 = load('data3.mat');
+load('data1.mat');
+load('data2.mat');
+load('data3.mat');
 
 % Given frequences
 Freq1=2000;
@@ -22,13 +22,13 @@ Freq2=166;
 Freq3=250;
 
 %% Computations for Data1
-x1=(1:length(Data1))/Freq1;
+x1=(1:length(data1))/Freq1;
 
 %% Computations for Data2
-x2=(1:length(Data2))/Freq2;
+x2=(1:length(data2))/Freq2;
 
 %% Computations for Data3
-x3=(1:length(Data3))/Freq3;
+x3=(1:length(data3))/Freq3;
 
 %% Below are shown the plots of the given data.
 %% Plots are in time domain and range from zero to the Sampling Period T 
@@ -43,9 +43,11 @@ x3=(1:length(Data3))/Freq3;
 % measure as μV for this reason, since values stay approximately in the 
 % interval [-400,+500].
 
-figure(1),title(['EMG signals']),xlabel('Time [s]'),ylabel('EMG [μV]') %HP
+figure
+title('EMG signals')
+xlabel('Time [s]'),ylabel('EMG [μV]')
 hold on
-plot(x1,Data1.data1)
+plot(x1/60,data1)
 
 %% Plots for data2
 
@@ -57,17 +59,20 @@ plot(x1,Data1.data1)
 % perform.
 
 % Plot the data
-figure(2),subplot(1,2,1),title(['Movement signals']),xlabel('Time [s]'),ylabel('Movement [mm]')
+figure
+subplot(1,2,1)
+title('Movement signals')
+xlabel('Time [s]'),ylabel('Movement [cm]')
 hold on
-plot(x2,Data2.data2(1,:))
-hold on
-plot(x2,Data2.data2(2,:))
+plot(x2,data2(1,:))
+plot(x2,data2(2,:))
 legend('x','y')
 
 % Plot the movement
-figure(2),subplot(1,2,2),title(['Movement along X and Y axes']),xlabel('X [mm]'),ylabel('Y [mm]')
-hold on
-plot(Data2.data2(1,:),Data2.data2(2,:))
+subplot(1,2,2)
+title('Movement along X and Y axes')
+xlabel('X [cm]'),ylabel('Y [cm]')
+plot(data2(1,:),data2(2,:))
 
 %% Plots for data3
 
@@ -76,6 +81,8 @@ plot(Data2.data2(1,:),Data2.data2(2,:))
 % We interpreted the unit of measure as nV for this reason, since values 
 % stay approximately in the interval [-19200,-18500].
 
-figure(3),title(['EEG signals']),xlabel('Time [s]'),ylabel('EEG [μV]')
-hold on
-plot(x3,Data3.data3)
+figure
+title('EEG signals')
+xlabel('Time [s]'),ylabel('EEG [μV]')
+scalingFactor=1/1000;
+plot(x3,data3*scalingFactor)
