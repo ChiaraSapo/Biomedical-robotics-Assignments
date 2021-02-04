@@ -1,5 +1,4 @@
 # Biomedical robotics Assignments
-All of the assignments were implemented in MATLAB. 
 
 ## Ass0
 Plot and recognize 3 types of biomedical signals: EEG, EMG, muscular. 
@@ -16,7 +15,7 @@ Analyze EMG data through MATLAB.
 Content: Matlab code and data to try it.
 
 ## Ass3
-Move computer cursor via smartphone movement data through Simulink.
+Move computer cursor via smartphone gyroscope data through Simulink.
 
 Content: Matlab code, Simulink model, final report.
 
