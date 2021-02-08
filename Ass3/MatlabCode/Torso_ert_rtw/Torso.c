@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Torso'.
  *
- * Model version                  : 1.19
+ * Model version                  : 1.20
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Mon Feb  8 19:05:20 2021
+ * C/C++ source code generated on : Mon Feb  8 20:14:51 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -516,10 +516,10 @@ void Torso_initialize(void)
   }
 
   /* External mode info */
-  Torso_M->Sizes.checksums[0] = (3641542897U);
-  Torso_M->Sizes.checksums[1] = (1751017191U);
-  Torso_M->Sizes.checksums[2] = (434612158U);
-  Torso_M->Sizes.checksums[3] = (1620116833U);
+  Torso_M->Sizes.checksums[0] = (3091184719U);
+  Torso_M->Sizes.checksums[1] = (1008874043U);
+  Torso_M->Sizes.checksums[2] = (1705650495U);
+  Torso_M->Sizes.checksums[3] = (2429927591U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;

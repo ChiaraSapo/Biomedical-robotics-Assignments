@@ -7,9 +7,9 @@
  *
  * Code generation for model "Torso".
  *
- * Model version              : 1.19
+ * Model version              : 1.20
  * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
- * C source code generated on : Mon Feb  8 19:05:20 2021
+ * C source code generated on : Mon Feb  8 20:14:51 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
