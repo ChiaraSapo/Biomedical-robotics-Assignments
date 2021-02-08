@@ -36,7 +36,7 @@ public class Wrist extends AppCompatActivity implements SensorEventListener, OnF
     private boolean isWidgetsLayoutHidden = false;
      private float[] mGyroscopeData = { 0.0f, 0.0f, 0.0f };
      private SensorManager mSensorManager;
-    private String[] scopeTitles = {"Data (rad) 1", "Data (rad) 2", "Filtered Data (rad)"};
+    private String[] scopeTitles = {"Data (rad) 1", "Data (rad) 2", "Filtered Data (rad)", "Unfiltered Data (rad)1"};
 
     private ImageButton btnZoom = null;
     private final CountDownTimer timerZoomButton = new CountDownTimer(5000, 1000) {
@@ -167,6 +167,9 @@ public class Wrist extends AppCompatActivity implements SensorEventListener, OnF
             case "dot3":
                 registerAndSetChartSettingsOfaScope(3);
                 break;
+            case "dot4":
+                registerAndSetChartSettingsOfaScope(4);
+                break;
             default:
                 break;
     }
@@ -266,7 +269,7 @@ public class Wrist extends AppCompatActivity implements SensorEventListener, OnF
 
         // Set up the ViewPager with the sections adapter.
         mCameraScopePager = (ViewPager) findViewById(R.id.cameraScopeContainer);
-        mCameraScopePager.setOffscreenPageLimit(3);
+        mCameraScopePager.setOffscreenPageLimit(4);
         mCameraScopePager.setAdapter(mCameraScopeAdapter);
 
         TabLayout dotsLayout = (TabLayout) findViewById(R.id.dots);

@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Wrist'.
  *
- * Model version                  : 1.22
+ * Model version                  : 1.39
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Mon Feb  8 18:48:42 2021
+ * C/C++ source code generated on : Mon Feb  8 19:32:55 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -27,13 +27,23 @@ P_Wrist_T Wrist_P = {
    */
   0.01,
 
-  /* Computed Parameter: DiscreteTimeIntegrator4_gainval
-   * Referenced by: '<S3>/Discrete-Time Integrator4'
+  /* Computed Parameter: DiscreteTimeIntegrator1_gainval
+   * Referenced by: '<Root>/Discrete-Time Integrator1'
    */
   0.016F,
 
-  /* Computed Parameter: DiscreteTimeIntegrator4_IC
-   * Referenced by: '<S3>/Discrete-Time Integrator4'
+  /* Computed Parameter: DiscreteTimeIntegrator1_IC
+   * Referenced by: '<Root>/Discrete-Time Integrator1'
+   */
+  0.0F,
+
+  /* Computed Parameter: DiscreteTimeIntegrator_gainval
+   * Referenced by: '<Root>/Discrete-Time Integrator'
+   */
+  0.016F,
+
+  /* Computed Parameter: DiscreteTimeIntegrator_IC
+   * Referenced by: '<Root>/Discrete-Time Integrator'
    */
   0.0F,
 
@@ -42,30 +52,10 @@ P_Wrist_T Wrist_P = {
    */
   0.096F,
 
-  /* Computed Parameter: DiscreteTimeIntegrator5_gainval
-   * Referenced by: '<S3>/Discrete-Time Integrator5'
-   */
-  0.016F,
-
-  /* Computed Parameter: DiscreteTimeIntegrator5_IC
-   * Referenced by: '<S3>/Discrete-Time Integrator5'
-   */
-  0.0F,
-
   /* Computed Parameter: Gain1_Gain
    * Referenced by: '<Root>/Gain1'
    */
-  0.096F,
-
-  /* Computed Parameter: Gain3_Gain
-   * Referenced by: '<S3>/Gain3'
-   */
-  1.0F,
-
-  /* Computed Parameter: Gain4_Gain
-   * Referenced by: '<S3>/Gain4'
-   */
-  1.0F
+  0.096F
 };
 
 /*

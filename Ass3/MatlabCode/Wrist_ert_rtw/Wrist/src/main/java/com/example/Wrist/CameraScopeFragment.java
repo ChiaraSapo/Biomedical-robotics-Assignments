@@ -49,6 +49,9 @@ public class CameraScopeFragment extends Fragment {
             case 3:
                 rootView = inflater.inflate(R.layout.chart_3, container, false);
                 break;
+            case 4:
+                rootView = inflater.inflate(R.layout.chart_4, container, false);
+                break;
         }
 
         return rootView;

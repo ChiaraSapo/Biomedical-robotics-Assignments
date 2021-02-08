@@ -7,9 +7,9 @@
  *
  * Code generation for model "Wrist".
  *
- * Model version              : 1.22
+ * Model version              : 1.39
  * Simulink Coder version : 9.4 (R2020b) 29-Jul-2020
- * C source code generated on : Mon Feb  8 18:48:42 2021
+ * C source code generated on : Mon Feb  8 19:32:55 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -63,7 +63,7 @@ static const char_T * rtDataTypeNames[] = {
 static DataTypeTransition rtBTransitions[] = {
   { (char_T *)(&Wrist_B.Gain2), 0, 0, 6 },
 
-  { (char_T *)(&Wrist_B.MATLABSystem_o2), 1, 0, 1 },
+  { (char_T *)(&Wrist_B.TmpSignalConversionAtToWorkspac[0]), 1, 0, 6 },
 
   { (char_T *)(&Wrist_B.LowpassFilter2.LowpassFilter1), 1, 0, 1 },
 
@@ -72,11 +72,9 @@ static DataTypeTransition rtBTransitions[] = {
 
   { (char_T *)(&Wrist_DW.obj), 14, 0, 1 },
 
-  { (char_T *)(&Wrist_DW.Datarad2_PWORK.LoggedData), 11, 0, 9 },
+  { (char_T *)(&Wrist_DW.FilteredDatarad_PWORK.LoggedData), 11, 0, 11 },
 
-  { (char_T *)(&Wrist_DW.DiscreteTimeIntegrator4_DSTATE), 1, 0, 2 },
-
-  { (char_T *)(&Wrist_DW.DiscreteTimeIntegrator4_PrevRes), 2, 0, 2 },
+  { (char_T *)(&Wrist_DW.DiscreteTimeIntegrator1_DSTATE), 1, 0, 2 },
 
   { (char_T *)(&Wrist_DW.LowpassFilter2.obj), 15, 0, 1 },
 
@@ -89,7 +87,7 @@ static DataTypeTransition rtBTransitions[] = {
 
 /* data type transition table for block I/O structure */
 static DataTypeTransitionTable rtBTransTable = {
-  12U,
+  11U,
   rtBTransitions
 };
 
@@ -97,7 +95,7 @@ static DataTypeTransitionTable rtBTransTable = {
 static DataTypeTransition rtPTransitions[] = {
   { (char_T *)(&Wrist_P.Constant_Value), 0, 0, 1 },
 
-  { (char_T *)(&Wrist_P.DiscreteTimeIntegrator4_gainval), 1, 0, 8 }
+  { (char_T *)(&Wrist_P.DiscreteTimeIntegrator1_gainval), 1, 0, 6 }
 };
 
 /* data type transition table for Parameters structure */

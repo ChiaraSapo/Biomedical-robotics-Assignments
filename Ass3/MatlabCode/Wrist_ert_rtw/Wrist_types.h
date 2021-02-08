@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Wrist'.
  *
- * Model version                  : 1.22
+ * Model version                  : 1.39
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Mon Feb  8 18:48:42 2021
+ * C/C++ source code generated on : Mon Feb  8 19:32:55 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -23,30 +23,30 @@
 #include "multiword_types.h"
 
 /* Model Code Variants */
-#ifndef struct_tag_kNr580oAvktpq4durSNhwG
-#define struct_tag_kNr580oAvktpq4durSNhwG
+#ifndef struct_tag_EIQOA9QJi1JvCQojgY7SZC
+#define struct_tag_EIQOA9QJi1JvCQojgY7SZC
 
-struct tag_kNr580oAvktpq4durSNhwG
+struct tag_EIQOA9QJi1JvCQojgY7SZC
 {
   int32_T S0_isInitialized;
-  real32_T W0_states[53];
+  real32_T W0_states[5];
   real32_T P0_InitialStates;
-  real32_T P1_Coefficients[54];
+  real32_T P1_Coefficients[6];
 };
 
-#endif                                 /*struct_tag_kNr580oAvktpq4durSNhwG*/
+#endif                                 /*struct_tag_EIQOA9QJi1JvCQojgY7SZC*/
 
 #ifndef typedef_b_dsp_FIRFilter_0_Wrist_T
 #define typedef_b_dsp_FIRFilter_0_Wrist_T
 
-typedef struct tag_kNr580oAvktpq4durSNhwG b_dsp_FIRFilter_0_Wrist_T;
+typedef struct tag_EIQOA9QJi1JvCQojgY7SZC b_dsp_FIRFilter_0_Wrist_T;
 
 #endif                                 /*typedef_b_dsp_FIRFilter_0_Wrist_T*/
 
-#ifndef struct_tag_T2y1ra2gWjGiv7mMd80wCF
-#define struct_tag_T2y1ra2gWjGiv7mMd80wCF
+#ifndef struct_tag_ARmquajYlK1ErnOnGdGdzB
+#define struct_tag_ARmquajYlK1ErnOnGdGdzB
 
-struct tag_T2y1ra2gWjGiv7mMd80wCF
+struct tag_ARmquajYlK1ErnOnGdGdzB
 {
   boolean_T matlabCodegenIsDeleted;
   int32_T isInitialized;
@@ -54,19 +54,19 @@ struct tag_T2y1ra2gWjGiv7mMd80wCF
   b_dsp_FIRFilter_0_Wrist_T cSFunObject;
 };
 
-#endif                                 /*struct_tag_T2y1ra2gWjGiv7mMd80wCF*/
+#endif                                 /*struct_tag_ARmquajYlK1ErnOnGdGdzB*/
 
 #ifndef typedef_b_dspcodegen_FIRFilter_Wrist_T
 #define typedef_b_dspcodegen_FIRFilter_Wrist_T
 
-typedef struct tag_T2y1ra2gWjGiv7mMd80wCF b_dspcodegen_FIRFilter_Wrist_T;
+typedef struct tag_ARmquajYlK1ErnOnGdGdzB b_dspcodegen_FIRFilter_Wrist_T;
 
 #endif                                /*typedef_b_dspcodegen_FIRFilter_Wrist_T*/
 
-#ifndef struct_tag_85JHXFNpe6qZAV50lt4pM
-#define struct_tag_85JHXFNpe6qZAV50lt4pM
+#ifndef struct_tag_XewlQMEBHNV2QbuPt4LiVE
+#define struct_tag_XewlQMEBHNV2QbuPt4LiVE
 
-struct tag_85JHXFNpe6qZAV50lt4pM
+struct tag_XewlQMEBHNV2QbuPt4LiVE
 {
   boolean_T matlabCodegenIsDeleted;
   int32_T isInitialized;
@@ -77,12 +77,12 @@ struct tag_85JHXFNpe6qZAV50lt4pM
   b_dspcodegen_FIRFilter_Wrist_T _pobj0;
 };
 
-#endif                                 /*struct_tag_85JHXFNpe6qZAV50lt4pM*/
+#endif                                 /*struct_tag_XewlQMEBHNV2QbuPt4LiVE*/
 
 #ifndef typedef_dsp_LowpassFilter_Wrist_T
 #define typedef_dsp_LowpassFilter_Wrist_T
 
-typedef struct tag_85JHXFNpe6qZAV50lt4pM dsp_LowpassFilter_Wrist_T;
+typedef struct tag_XewlQMEBHNV2QbuPt4LiVE dsp_LowpassFilter_Wrist_T;
 
 #endif                                 /*typedef_dsp_LowpassFilter_Wrist_T*/
 

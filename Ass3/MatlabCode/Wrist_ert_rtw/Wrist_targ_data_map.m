@@ -39,40 +39,32 @@
       paramMap.sections(1) = section;
       clear section
       
-      section.nData     = 8;
-      section.data(8)  = dumData; %prealloc
+      section.nData     = 6;
+      section.data(6)  = dumData; %prealloc
       
-	  ;% Wrist_P.DiscreteTimeIntegrator4_gainval
+	  ;% Wrist_P.DiscreteTimeIntegrator1_gainval
 	  section.data(1).logicalSrcIdx = 1;
 	  section.data(1).dtTransOffset = 0;
 	
-	  ;% Wrist_P.DiscreteTimeIntegrator4_IC
+	  ;% Wrist_P.DiscreteTimeIntegrator1_IC
 	  section.data(2).logicalSrcIdx = 2;
 	  section.data(2).dtTransOffset = 1;
 	
-	  ;% Wrist_P.Gain2_Gain
+	  ;% Wrist_P.DiscreteTimeIntegrator_gainval
 	  section.data(3).logicalSrcIdx = 3;
 	  section.data(3).dtTransOffset = 2;
 	
-	  ;% Wrist_P.DiscreteTimeIntegrator5_gainval
+	  ;% Wrist_P.DiscreteTimeIntegrator_IC
 	  section.data(4).logicalSrcIdx = 4;
 	  section.data(4).dtTransOffset = 3;
 	
-	  ;% Wrist_P.DiscreteTimeIntegrator5_IC
+	  ;% Wrist_P.Gain2_Gain
 	  section.data(5).logicalSrcIdx = 5;
 	  section.data(5).dtTransOffset = 4;
 	
 	  ;% Wrist_P.Gain1_Gain
 	  section.data(6).logicalSrcIdx = 6;
 	  section.data(6).dtTransOffset = 5;
-	
-	  ;% Wrist_P.Gain3_Gain
-	  section.data(7).logicalSrcIdx = 7;
-	  section.data(7).dtTransOffset = 6;
-	
-	  ;% Wrist_P.Gain4_Gain
-	  section.data(8).logicalSrcIdx = 8;
-	  section.data(8).dtTransOffset = 7;
 	
       nTotData = nTotData + section.nData;
       paramMap.sections(2) = section;
@@ -142,12 +134,24 @@
       sigMap.sections(1) = section;
       clear section
       
-      section.nData     = 1;
-      section.data(1)  = dumData; %prealloc
+      section.nData     = 4;
+      section.data(4)  = dumData; %prealloc
       
-	  ;% Wrist_B.MATLABSystem_o2
+	  ;% Wrist_B.TmpSignalConversionAtToWorkspac
 	  section.data(1).logicalSrcIdx = 4;
 	  section.data(1).dtTransOffset = 0;
+	
+	  ;% Wrist_B.MATLABSystem_o1
+	  section.data(2).logicalSrcIdx = 5;
+	  section.data(2).dtTransOffset = 3;
+	
+	  ;% Wrist_B.MATLABSystem_o2
+	  section.data(3).logicalSrcIdx = 6;
+	  section.data(3).dtTransOffset = 4;
+	
+	  ;% Wrist_B.MATLABSystem_o3
+	  section.data(4).logicalSrcIdx = 7;
+	  section.data(4).dtTransOffset = 5;
 	
       nTotData = nTotData + section.nData;
       sigMap.sections(2) = section;
@@ -157,7 +161,7 @@
       section.data(1)  = dumData; %prealloc
       
 	  ;% Wrist_B.LowpassFilter2.LowpassFilter1
-	  section.data(1).logicalSrcIdx = 5;
+	  section.data(1).logicalSrcIdx = 8;
 	  section.data(1).dtTransOffset = 0;
 	
       nTotData = nTotData + section.nData;
@@ -168,7 +172,7 @@
       section.data(1)  = dumData; %prealloc
       
 	  ;% Wrist_B.LowpassFilter1.LowpassFilter1
-	  section.data(1).logicalSrcIdx = 6;
+	  section.data(1).logicalSrcIdx = 9;
 	  section.data(1).dtTransOffset = 0;
 	
       nTotData = nTotData + section.nData;
@@ -193,7 +197,7 @@
   ;%*******************
       
     nTotData      = 0; %add to this count as we go
-    nTotSects     = 8;
+    nTotSects     = 7;
     sectIdxOffset = 4;
     
     ;%
@@ -227,28 +231,36 @@
       dworkMap.sections(1) = section;
       clear section
       
-      section.nData     = 5;
-      section.data(5)  = dumData; %prealloc
+      section.nData     = 7;
+      section.data(7)  = dumData; %prealloc
       
-	  ;% Wrist_DW.Datarad2_PWORK.LoggedData
+	  ;% Wrist_DW.FilteredDatarad_PWORK.LoggedData
 	  section.data(1).logicalSrcIdx = 1;
 	  section.data(1).dtTransOffset = 0;
 	
-	  ;% Wrist_DW.ToWorkspace_PWORK.LoggedData
+	  ;% Wrist_DW.ToWorkspace1_PWORK.LoggedData
 	  section.data(2).logicalSrcIdx = 2;
 	  section.data(2).dtTransOffset = 1;
 	
-	  ;% Wrist_DW.VRSink_PWORK
+	  ;% Wrist_DW.Datarad2_PWORK.LoggedData
 	  section.data(3).logicalSrcIdx = 3;
 	  section.data(3).dtTransOffset = 2;
 	
-	  ;% Wrist_DW.Datarad1_PWORK.LoggedData
+	  ;% Wrist_DW.ToWorkspace_PWORK.LoggedData
 	  section.data(4).logicalSrcIdx = 4;
-	  section.data(4).dtTransOffset = 7;
+	  section.data(4).dtTransOffset = 3;
 	
-	  ;% Wrist_DW.FilteredDatarad_PWORK.LoggedData
+	  ;% Wrist_DW.VRSink_PWORK
 	  section.data(5).logicalSrcIdx = 5;
-	  section.data(5).dtTransOffset = 8;
+	  section.data(5).dtTransOffset = 4;
+	
+	  ;% Wrist_DW.Datarad1_PWORK.LoggedData
+	  section.data(6).logicalSrcIdx = 6;
+	  section.data(6).dtTransOffset = 9;
+	
+	  ;% Wrist_DW.UnfilteredDatarad1_PWORK.LoggedData
+	  section.data(7).logicalSrcIdx = 7;
+	  section.data(7).dtTransOffset = 10;
 	
       nTotData = nTotData + section.nData;
       dworkMap.sections(2) = section;
@@ -257,31 +269,16 @@
       section.nData     = 2;
       section.data(2)  = dumData; %prealloc
       
-	  ;% Wrist_DW.DiscreteTimeIntegrator4_DSTATE
-	  section.data(1).logicalSrcIdx = 6;
-	  section.data(1).dtTransOffset = 0;
-	
-	  ;% Wrist_DW.DiscreteTimeIntegrator5_DSTATE
-	  section.data(2).logicalSrcIdx = 7;
-	  section.data(2).dtTransOffset = 1;
-	
-      nTotData = nTotData + section.nData;
-      dworkMap.sections(3) = section;
-      clear section
-      
-      section.nData     = 2;
-      section.data(2)  = dumData; %prealloc
-      
-	  ;% Wrist_DW.DiscreteTimeIntegrator4_PrevRes
+	  ;% Wrist_DW.DiscreteTimeIntegrator1_DSTATE
 	  section.data(1).logicalSrcIdx = 8;
 	  section.data(1).dtTransOffset = 0;
 	
-	  ;% Wrist_DW.DiscreteTimeIntegrator5_PrevRes
+	  ;% Wrist_DW.DiscreteTimeIntegrator_DSTATE
 	  section.data(2).logicalSrcIdx = 9;
 	  section.data(2).dtTransOffset = 1;
 	
       nTotData = nTotData + section.nData;
-      dworkMap.sections(4) = section;
+      dworkMap.sections(3) = section;
       clear section
       
       section.nData     = 1;
@@ -292,7 +289,7 @@
 	  section.data(1).dtTransOffset = 0;
 	
       nTotData = nTotData + section.nData;
-      dworkMap.sections(5) = section;
+      dworkMap.sections(4) = section;
       clear section
       
       section.nData     = 2;
@@ -307,7 +304,7 @@
 	  section.data(2).dtTransOffset = 1;
 	
       nTotData = nTotData + section.nData;
-      dworkMap.sections(6) = section;
+      dworkMap.sections(5) = section;
       clear section
       
       section.nData     = 1;
@@ -318,7 +315,7 @@
 	  section.data(1).dtTransOffset = 0;
 	
       nTotData = nTotData + section.nData;
-      dworkMap.sections(7) = section;
+      dworkMap.sections(6) = section;
       clear section
       
       section.nData     = 2;
@@ -333,7 +330,7 @@
 	  section.data(2).dtTransOffset = 1;
 	
       nTotData = nTotData + section.nData;
-      dworkMap.sections(8) = section;
+      dworkMap.sections(7) = section;
       clear section
       
     
@@ -362,8 +359,8 @@
   ;%
 
 
-  targMap.checksum0 = 3662534729;
-  targMap.checksum1 = 4258126196;
-  targMap.checksum2 = 213179641;
-  targMap.checksum3 = 4292788418;
+  targMap.checksum0 = 3353165631;
+  targMap.checksum1 = 4208173274;
+  targMap.checksum2 = 698039784;
+  targMap.checksum3 = 1947786766;
 

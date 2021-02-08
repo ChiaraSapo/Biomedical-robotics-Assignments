@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Wrist'.
  *
- * Model version                  : 1.22
+ * Model version                  : 1.39
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Mon Feb  8 18:48:42 2021
+ * C/C++ source code generated on : Mon Feb  8 19:32:55 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex

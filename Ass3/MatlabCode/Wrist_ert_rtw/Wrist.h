@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Wrist'.
  *
- * Model version                  : 1.22
+ * Model version                  : 1.39
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Mon Feb  8 18:48:42 2021
+ * C/C++ source code generated on : Mon Feb  8 19:32:55 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -83,16 +83,16 @@
 #define rtmGetTPtr(rtm)                (&(rtm)->Timing.taskTime0)
 #endif
 
-/* Block signals for system '<S3>/Lowpass Filter1' */
+/* Block signals for system '<Root>/Lowpass Filter1' */
 typedef struct {
-  real32_T LowpassFilter1;             /* '<S3>/Lowpass Filter1' */
+  real32_T LowpassFilter1;             /* '<Root>/Lowpass Filter1' */
 } B_LowpassFilter1_Wrist_T;
 
-/* Block states (default storage) for system '<S3>/Lowpass Filter1' */
+/* Block states (default storage) for system '<Root>/Lowpass Filter1' */
 typedef struct {
-  dsp_LowpassFilter_Wrist_T obj;       /* '<S3>/Lowpass Filter1' */
-  boolean_T objisempty;                /* '<S3>/Lowpass Filter1' */
-  boolean_T isInitialized;             /* '<S3>/Lowpass Filter1' */
+  dsp_LowpassFilter_Wrist_T obj;       /* '<Root>/Lowpass Filter1' */
+  boolean_T objisempty;                /* '<Root>/Lowpass Filter1' */
+  boolean_T isInitialized;             /* '<Root>/Lowpass Filter1' */
 } DW_LowpassFilter1_Wrist_T;
 
 /* Block signals (default storage) */
@@ -101,14 +101,25 @@ typedef struct {
   real_T Gain1;                        /* '<Root>/Gain1' */
   real_T Constant;                     /* '<Root>/Constant' */
   real_T new_pos[3];                   /* '<Root>/MATLAB Function2' */
+  real32_T TmpSignalConversionAtToWorkspac[3];
+  real32_T MATLABSystem_o1;            /* '<S1>/MATLAB System' */
   real32_T MATLABSystem_o2;            /* '<S1>/MATLAB System' */
-  B_LowpassFilter1_Wrist_T LowpassFilter2;/* '<S3>/Lowpass Filter1' */
-  B_LowpassFilter1_Wrist_T LowpassFilter1;/* '<S3>/Lowpass Filter1' */
+  real32_T MATLABSystem_o3;            /* '<S1>/MATLAB System' */
+  B_LowpassFilter1_Wrist_T LowpassFilter2;/* '<Root>/Lowpass Filter1' */
+  B_LowpassFilter1_Wrist_T LowpassFilter1;/* '<Root>/Lowpass Filter1' */
 } B_Wrist_T;
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
   codertarget_internal_androidG_T obj; /* '<S1>/MATLAB System' */
+  struct {
+    void *LoggedData;
+  } FilteredDatarad_PWORK;             /* '<Root>/Filtered Data (rad)' */
+
+  struct {
+    void *LoggedData;
+  } ToWorkspace1_PWORK;                /* '<Root>/To Workspace1' */
+
   struct {
     void *LoggedData;
   } Datarad2_PWORK;                    /* '<Root>/Data (rad) 2' */
@@ -124,14 +135,12 @@ typedef struct {
 
   struct {
     void *LoggedData;
-  } FilteredDatarad_PWORK;             /* '<Root>/Filtered Data (rad)' */
+  } UnfilteredDatarad1_PWORK;          /* '<Root>/Unfiltered Data (rad)1' */
 
-  real32_T DiscreteTimeIntegrator4_DSTATE;/* '<S3>/Discrete-Time Integrator4' */
-  real32_T DiscreteTimeIntegrator5_DSTATE;/* '<S3>/Discrete-Time Integrator5' */
-  int8_T DiscreteTimeIntegrator4_PrevRes;/* '<S3>/Discrete-Time Integrator4' */
-  int8_T DiscreteTimeIntegrator5_PrevRes;/* '<S3>/Discrete-Time Integrator5' */
-  DW_LowpassFilter1_Wrist_T LowpassFilter2;/* '<S3>/Lowpass Filter1' */
-  DW_LowpassFilter1_Wrist_T LowpassFilter1;/* '<S3>/Lowpass Filter1' */
+  real32_T DiscreteTimeIntegrator1_DSTATE;/* '<Root>/Discrete-Time Integrator1' */
+  real32_T DiscreteTimeIntegrator_DSTATE;/* '<Root>/Discrete-Time Integrator' */
+  DW_LowpassFilter1_Wrist_T LowpassFilter2;/* '<Root>/Lowpass Filter1' */
+  DW_LowpassFilter1_Wrist_T LowpassFilter1;/* '<Root>/Lowpass Filter1' */
 } DW_Wrist_T;
 
 /* Parameters (default storage) */
@@ -139,33 +148,27 @@ struct P_Wrist_T_ {
   real_T Constant_Value;               /* Expression: 0.01
                                         * Referenced by: '<Root>/Constant'
                                         */
-  real32_T DiscreteTimeIntegrator4_gainval;
-                          /* Computed Parameter: DiscreteTimeIntegrator4_gainval
-                           * Referenced by: '<S3>/Discrete-Time Integrator4'
+  real32_T DiscreteTimeIntegrator1_gainval;
+                          /* Computed Parameter: DiscreteTimeIntegrator1_gainval
+                           * Referenced by: '<Root>/Discrete-Time Integrator1'
                            */
-  real32_T DiscreteTimeIntegrator4_IC;
-                               /* Computed Parameter: DiscreteTimeIntegrator4_IC
-                                * Referenced by: '<S3>/Discrete-Time Integrator4'
+  real32_T DiscreteTimeIntegrator1_IC;
+                               /* Computed Parameter: DiscreteTimeIntegrator1_IC
+                                * Referenced by: '<Root>/Discrete-Time Integrator1'
                                 */
+  real32_T DiscreteTimeIntegrator_gainval;
+                           /* Computed Parameter: DiscreteTimeIntegrator_gainval
+                            * Referenced by: '<Root>/Discrete-Time Integrator'
+                            */
+  real32_T DiscreteTimeIntegrator_IC;
+                                /* Computed Parameter: DiscreteTimeIntegrator_IC
+                                 * Referenced by: '<Root>/Discrete-Time Integrator'
+                                 */
   real32_T Gain2_Gain;                 /* Computed Parameter: Gain2_Gain
                                         * Referenced by: '<Root>/Gain2'
                                         */
-  real32_T DiscreteTimeIntegrator5_gainval;
-                          /* Computed Parameter: DiscreteTimeIntegrator5_gainval
-                           * Referenced by: '<S3>/Discrete-Time Integrator5'
-                           */
-  real32_T DiscreteTimeIntegrator5_IC;
-                               /* Computed Parameter: DiscreteTimeIntegrator5_IC
-                                * Referenced by: '<S3>/Discrete-Time Integrator5'
-                                */
   real32_T Gain1_Gain;                 /* Computed Parameter: Gain1_Gain
                                         * Referenced by: '<Root>/Gain1'
-                                        */
-  real32_T Gain3_Gain;                 /* Computed Parameter: Gain3_Gain
-                                        * Referenced by: '<S3>/Gain3'
-                                        */
-  real32_T Gain4_Gain;                 /* Computed Parameter: Gain4_Gain
-                                        * Referenced by: '<S3>/Gain4'
                                         */
 };
 
@@ -231,18 +234,6 @@ extern void Wrist_terminate(void);
 extern RT_MODEL_Wrist_T *const Wrist_M;
 
 /*-
- * These blocks were eliminated from the model due to optimizations:
- *
- * Block '<S3>/Delay' : Unused code path elimination
- * Block '<S3>/Delay1' : Unused code path elimination
- * Block '<S3>/Gain1' : Unused code path elimination
- * Block '<S3>/Gain2' : Unused code path elimination
- * Block '<S3>/Sum' : Unused code path elimination
- * Block '<S3>/Sum1' : Unused code path elimination
- * Block '<S3>/Sum4' : Unused code path elimination
- */
-
-/*-
  * The generated code includes comments that allow you to trace directly
  * back to the appropriate location in the model.  The basic format
  * is <system>/block_name, where system is the system number (uniquely
@@ -259,7 +250,6 @@ extern RT_MODEL_Wrist_T *const Wrist_M;
  * '<Root>' : 'Wrist'
  * '<S1>'   : 'Wrist/Gyroscope'
  * '<S2>'   : 'Wrist/MATLAB Function2'
- * '<S3>'   : 'Wrist/Subsystem'
  */
 #endif                                 /* RTW_HEADER_Wrist_h_ */
 

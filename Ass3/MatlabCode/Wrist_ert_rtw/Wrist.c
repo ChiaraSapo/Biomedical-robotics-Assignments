@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Wrist'.
  *
- * Model version                  : 1.22
+ * Model version                  : 1.39
  * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
- * C/C++ source code generated on : Mon Feb  8 18:48:42 2021
+ * C/C++ source code generated on : Mon Feb  8 19:32:55 2021
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -61,25 +61,14 @@ static void rate_scheduler(void)
  */
 void Wrist_LowpassFilter1_Init(DW_LowpassFilter1_Wrist_T *localDW)
 {
-  static const real32_T tmp[54] = { -0.000973710965F, 0.00166569918F,
-    0.00273135F, 0.00281710038F, 0.000877743354F, -0.00252094725F, -0.005167461F,
-    -0.00452284422F, 0.000147175975F, 0.00645054085F, 0.00975112058F,
-    0.00627891161F, -0.00345179206F, -0.0136479521F, -0.0162395965F,
-    -0.00664035697F, 0.0114958752F, 0.0265416577F, 0.0253983811F, 0.00308172707F,
-    -0.0307881497F, -0.0539321341F, -0.0423728712F, 0.0149994548F, 0.106908366F,
-    0.201849341F, 0.262029946F, 0.262029946F, 0.201849341F, 0.106908366F,
-    0.0149994548F, -0.0423728712F, -0.0539321341F, -0.0307881497F,
-    0.00308172707F, 0.0253983811F, 0.0265416577F, 0.0114958752F, -0.00664035697F,
-    -0.0162395965F, -0.0136479521F, -0.00345179206F, 0.00627891161F,
-    0.00975112058F, 0.00645054085F, 0.000147175975F, -0.00452284422F,
-    -0.005167461F, -0.00252094725F, 0.000877743354F, 0.00281710038F, 0.00273135F,
-    0.00166569918F, -0.000973710965F };
+  static const real32_T tmp[6] = { -0.0492207743F, 0.0797213316F, 0.472272F,
+    0.472272F, 0.0797213316F, -0.0492207743F };
 
   b_dspcodegen_FIRFilter_Wrist_T *iobj_0;
   int32_T i;
   boolean_T wasTunablePropsChanged;
 
-  /* Start for MATLABSystem: '<S3>/Lowpass Filter1' */
+  /* Start for MATLABSystem: '<Root>/Lowpass Filter1' */
   localDW->obj._pobj0.matlabCodegenIsDeleted = true;
   localDW->obj.matlabCodegenIsDeleted = true;
   localDW->obj.isInitialized = 0;
@@ -96,7 +85,7 @@ void Wrist_LowpassFilter1_Init(DW_LowpassFilter1_Wrist_T *localDW)
 
   /* System object Constructor function: dsp.FIRFilter */
   localDW->obj._pobj0.cSFunObject.P0_InitialStates = 0.0F;
-  for (i = 0; i < 54; i++) {
+  for (i = 0; i < 6; i++) {
     iobj_0->cSFunObject.P1_Coefficients[i] = tmp[i];
   }
 
@@ -105,18 +94,18 @@ void Wrist_LowpassFilter1_Init(DW_LowpassFilter1_Wrist_T *localDW)
   localDW->obj.NumChannels = 1;
   localDW->obj.isSetupComplete = true;
 
-  /* End of Start for MATLABSystem: '<S3>/Lowpass Filter1' */
+  /* End of Start for MATLABSystem: '<Root>/Lowpass Filter1' */
 
-  /* InitializeConditions for MATLABSystem: '<S3>/Lowpass Filter1' */
+  /* InitializeConditions for MATLABSystem: '<Root>/Lowpass Filter1' */
   iobj_0 = localDW->obj.FilterObj;
   if (iobj_0->isInitialized == 1) {
     /* System object Initialization function: dsp.FIRFilter */
-    for (i = 0; i < 53; i++) {
+    for (i = 0; i < 5; i++) {
       iobj_0->cSFunObject.W0_states[i] = iobj_0->cSFunObject.P0_InitialStates;
     }
   }
 
-  /* End of InitializeConditions for MATLABSystem: '<S3>/Lowpass Filter1' */
+  /* End of InitializeConditions for MATLABSystem: '<Root>/Lowpass Filter1' */
 }
 
 /*
@@ -133,7 +122,7 @@ void Wrist_LowpassFilter1(real32_T rtu_0, B_LowpassFilter1_Wrist_T *localB,
   real32_T acc1;
   real32_T acc2;
 
-  /* MATLABSystem: '<S3>/Lowpass Filter1' */
+  /* MATLABSystem: '<Root>/Lowpass Filter1' */
   obj = localDW->obj.FilterObj;
   if (obj->isInitialized != 1) {
     obj->isSetupComplete = false;
@@ -141,7 +130,7 @@ void Wrist_LowpassFilter1(real32_T rtu_0, B_LowpassFilter1_Wrist_T *localB,
     obj->isSetupComplete = true;
 
     /* System object Initialization function: dsp.FIRFilter */
-    for (j = 0; j < 53; j++) {
+    for (j = 0; j < 5; j++) {
       obj->cSFunObject.W0_states[j] = obj->cSFunObject.P0_InitialStates;
     }
   }
@@ -152,19 +141,19 @@ void Wrist_LowpassFilter1(real32_T rtu_0, B_LowpassFilter1_Wrist_T *localB,
   /* Consume delay line and beginning of input samples */
   acc2 = rtu_0 * obj->cSFunObject.P1_Coefficients[0];
   acc1 = acc2;
-  for (j = 0; j < 53; j++) {
+  for (j = 0; j < 5; j++) {
     acc2 = obj_0->P1_Coefficients[j + 1] * obj_0->W0_states[j];
     acc1 += acc2;
   }
 
   /* Update delay line for next frame */
-  for (j = 51; j >= 0; j--) {
+  for (j = 3; j >= 0; j--) {
     obj_0->W0_states[j + 1] = obj_0->W0_states[j];
   }
 
   obj->cSFunObject.W0_states[0] = rtu_0;
 
-  /* MATLABSystem: '<S3>/Lowpass Filter1' */
+  /* MATLABSystem: '<Root>/Lowpass Filter1' */
   localB->LowpassFilter1 = acc1;
 }
 
@@ -177,7 +166,7 @@ void Wrist_LowpassFilter1_Term(DW_LowpassFilter1_Wrist_T *localDW)
 {
   b_dspcodegen_FIRFilter_Wrist_T *obj;
 
-  /* Terminate for MATLABSystem: '<S3>/Lowpass Filter1' */
+  /* Terminate for MATLABSystem: '<Root>/Lowpass Filter1' */
   if (!localDW->obj.matlabCodegenIsDeleted) {
     localDW->obj.matlabCodegenIsDeleted = true;
     if ((localDW->obj.isInitialized == 1) && localDW->obj.isSetupComplete) {
@@ -197,7 +186,7 @@ void Wrist_LowpassFilter1_Term(DW_LowpassFilter1_Wrist_T *localDW)
     }
   }
 
-  /* End of Terminate for MATLABSystem: '<S3>/Lowpass Filter1' */
+  /* End of Terminate for MATLABSystem: '<Root>/Lowpass Filter1' */
 }
 
 real_T rt_atan2d_snf(real_T u0, real_T u1)
@@ -240,36 +229,69 @@ real_T rt_atan2d_snf(real_T u0, real_T u1)
 void Wrist_step(void)
 {
   /* local block i/o variables */
-  real32_T rtb_DiscreteTimeIntegrator4;
-  real32_T rtb_DiscreteTimeIntegrator5;
+  real32_T rtb_DiscreteTimeIntegrator1;
+  real32_T rtb_DiscreteTimeIntegrator;
   real_T theta;
   real32_T out[3];
   if (Wrist_M->Timing.TaskCounters.TID[1] == 0) {
-    /* DiscreteIntegrator: '<S3>/Discrete-Time Integrator4' */
-    if (Wrist_DW.DiscreteTimeIntegrator4_PrevRes == 1) {
-      Wrist_DW.DiscreteTimeIntegrator4_DSTATE =
-        Wrist_P.DiscreteTimeIntegrator4_IC;
+    /* DiscreteIntegrator: '<Root>/Discrete-Time Integrator1' */
+    rtb_DiscreteTimeIntegrator1 = Wrist_DW.DiscreteTimeIntegrator1_DSTATE;
+    Wrist_LowpassFilter1(rtb_DiscreteTimeIntegrator1, &Wrist_B.LowpassFilter1,
+                         &Wrist_DW.LowpassFilter1);
+
+    /* DiscreteIntegrator: '<Root>/Discrete-Time Integrator' */
+    rtb_DiscreteTimeIntegrator = Wrist_DW.DiscreteTimeIntegrator_DSTATE;
+    Wrist_LowpassFilter1(rtb_DiscreteTimeIntegrator, &Wrist_B.LowpassFilter2,
+                         &Wrist_DW.LowpassFilter2);
+
+    /* MATLABSystem: '<S1>/MATLAB System' */
+    out[0] = 0.0F;
+    out[1] = 0.0F;
+    out[2] = 0.0F;
+    GET_GYROSCOPE_DATA(&out[0], &out[1], &out[2]);
+
+    /* MATLABSystem: '<S1>/MATLAB System' */
+    Wrist_B.MATLABSystem_o1 = out[0];
+
+    /* MATLABSystem: '<S1>/MATLAB System' */
+    Wrist_B.MATLABSystem_o2 = out[1];
+
+    /* MATLABSystem: '<S1>/MATLAB System' */
+    Wrist_B.MATLABSystem_o3 = out[2];
+
+    /* SignalConversion generated from: '<Root>/To Workspace1' */
+    Wrist_B.TmpSignalConversionAtToWorkspac[0] =
+      Wrist_B.LowpassFilter2.LowpassFilter1;
+    Wrist_B.TmpSignalConversionAtToWorkspac[1] = Wrist_B.MATLABSystem_o2;
+    Wrist_B.TmpSignalConversionAtToWorkspac[2] =
+      Wrist_B.LowpassFilter1.LowpassFilter1;
+
+    /* Scope: '<Root>/Filtered Data (rad)' */
+    /* Call plotting routine for a mobile target */
+    {
+      int_T scope3ID = 3;
+
+      {
+        int_T portIdx = 0;
+        int_T signalWidth = 3;
+        int_T sigNumDims = 1;
+        int_T sigDims[1] = { 3 };
+
+        real32_T up0[3];
+        up0[0] = (real32_T)Wrist_B.TmpSignalConversionAtToWorkspac[0];
+        up0[1] = (real32_T)Wrist_B.TmpSignalConversionAtToWorkspac[1];
+        up0[2] = (real32_T)Wrist_B.TmpSignalConversionAtToWorkspac[2];
+        CACHE_PLOT_DATA(scope3ID,portIdx,up0,signalWidth,sigNumDims,sigDims);
+      }
+
+      PLOT_DATA(scope3ID);
     }
 
-    /* DiscreteIntegrator: '<S3>/Discrete-Time Integrator4' */
-    rtb_DiscreteTimeIntegrator4 = Wrist_DW.DiscreteTimeIntegrator4_DSTATE;
-    Wrist_LowpassFilter1(rtb_DiscreteTimeIntegrator4, &Wrist_B.LowpassFilter1,
-                         &Wrist_DW.LowpassFilter1);
+    /* End of Scope: '<Root>/Filtered Data (rad)' */
 
     /* Gain: '<Root>/Gain2' */
     Wrist_B.Gain2 = (real_T)Wrist_P.Gain2_Gain *
       Wrist_B.LowpassFilter1.LowpassFilter1;
-
-    /* DiscreteIntegrator: '<S3>/Discrete-Time Integrator5' */
-    if (Wrist_DW.DiscreteTimeIntegrator5_PrevRes == 1) {
-      Wrist_DW.DiscreteTimeIntegrator5_DSTATE =
-        Wrist_P.DiscreteTimeIntegrator5_IC;
-    }
-
-    /* DiscreteIntegrator: '<S3>/Discrete-Time Integrator5' */
-    rtb_DiscreteTimeIntegrator5 = Wrist_DW.DiscreteTimeIntegrator5_DSTATE;
-    Wrist_LowpassFilter1(rtb_DiscreteTimeIntegrator5, &Wrist_B.LowpassFilter2,
-                         &Wrist_DW.LowpassFilter2);
 
     /* Gain: '<Root>/Gain1' */
     Wrist_B.Gain1 = (real_T)Wrist_P.Gain1_Gain *
@@ -350,19 +372,10 @@ void Wrist_step(void)
 
     /* End of Scope: '<Root>/Data (rad) 1' */
 
-    /* MATLABSystem: '<S1>/MATLAB System' */
-    out[0] = 0.0F;
-    out[1] = 0.0F;
-    out[2] = 0.0F;
-    GET_GYROSCOPE_DATA(&out[0], &out[1], &out[2]);
-
-    /* MATLABSystem: '<S1>/MATLAB System' */
-    Wrist_B.MATLABSystem_o2 = out[1];
-
-    /* Scope: '<Root>/Filtered Data (rad)' */
+    /* Scope: '<Root>/Unfiltered Data (rad)1' */
     /* Call plotting routine for a mobile target */
     {
-      int_T scope3ID = 3;
+      int_T scope4ID = 4;
 
       {
         int_T portIdx = 0;
@@ -371,32 +384,24 @@ void Wrist_step(void)
         int_T sigDims[1] = { 3 };
 
         real32_T up0[3];
-        up0[0] = (real32_T)Wrist_B.LowpassFilter2.LowpassFilter1;
+        up0[0] = (real32_T)Wrist_B.MATLABSystem_o1;
         up0[1] = (real32_T)Wrist_B.MATLABSystem_o2;
-        up0[2] = (real32_T)Wrist_B.LowpassFilter1.LowpassFilter1;
-        CACHE_PLOT_DATA(scope3ID,portIdx,up0,signalWidth,sigNumDims,sigDims);
+        up0[2] = (real32_T)Wrist_B.MATLABSystem_o3;
+        CACHE_PLOT_DATA(scope4ID,portIdx,up0,signalWidth,sigNumDims,sigDims);
       }
 
-      PLOT_DATA(scope3ID);
+      PLOT_DATA(scope4ID);
     }
 
-    /* End of Scope: '<Root>/Filtered Data (rad)' */
+    /* End of Scope: '<Root>/Unfiltered Data (rad)1' */
 
-    /* Update for DiscreteIntegrator: '<S3>/Discrete-Time Integrator4' incorporates:
-     *  Gain: '<S3>/Gain4'
-     *  MATLABSystem: '<S1>/MATLAB System'
-     */
-    Wrist_DW.DiscreteTimeIntegrator4_DSTATE += Wrist_P.Gain4_Gain * out[2] *
-      Wrist_P.DiscreteTimeIntegrator4_gainval;
-    Wrist_DW.DiscreteTimeIntegrator4_PrevRes = 0;
+    /* Update for DiscreteIntegrator: '<Root>/Discrete-Time Integrator1' */
+    Wrist_DW.DiscreteTimeIntegrator1_DSTATE +=
+      Wrist_P.DiscreteTimeIntegrator1_gainval * Wrist_B.MATLABSystem_o3;
 
-    /* Update for DiscreteIntegrator: '<S3>/Discrete-Time Integrator5' incorporates:
-     *  Gain: '<S3>/Gain3'
-     *  MATLABSystem: '<S1>/MATLAB System'
-     */
-    Wrist_DW.DiscreteTimeIntegrator5_DSTATE += Wrist_P.Gain3_Gain * out[0] *
-      Wrist_P.DiscreteTimeIntegrator5_gainval;
-    Wrist_DW.DiscreteTimeIntegrator5_PrevRes = 0;
+    /* Update for DiscreteIntegrator: '<Root>/Discrete-Time Integrator' */
+    Wrist_DW.DiscreteTimeIntegrator_DSTATE +=
+      Wrist_P.DiscreteTimeIntegrator_gainval * Wrist_B.MATLABSystem_o1;
   }
 
   /* External mode */
@@ -469,10 +474,10 @@ void Wrist_initialize(void)
   Wrist_M->Timing.stepSize0 = 0.004;
 
   /* External mode info */
-  Wrist_M->Sizes.checksums[0] = (3662534729U);
-  Wrist_M->Sizes.checksums[1] = (4258126196U);
-  Wrist_M->Sizes.checksums[2] = (213179641U);
-  Wrist_M->Sizes.checksums[3] = (4292788418U);
+  Wrist_M->Sizes.checksums[0] = (3353165631U);
+  Wrist_M->Sizes.checksums[1] = (4208173274U);
+  Wrist_M->Sizes.checksums[2] = (698039784U);
+  Wrist_M->Sizes.checksums[3] = (1947786766U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
@@ -508,10 +513,23 @@ void Wrist_initialize(void)
     dtInfo.PTransTable = &rtPTransTable;
   }
 
+  /* SetupRuntimeResources for Scope: '<Root>/Filtered Data (rad)' */
+  {
+    const char* mobileScopeProperties3 =
+      "{\"axesColor\":[0,0,0],\"axesScaling\":\"manual\",\"axesTickColor\":[0.686274509803922,0.686274509803922,0.686274509803922],\"blockType\":\"Scope\",\"displays\":[{\"lineColors\":[[1,1,0.0666666666666667],[0.0745098039215686,0.623529411764706,1],[1,0.411764705882353,0.16078431372549],[0.392156862745098,0.831372549019608,0.0745098039215686],[0.717647058823529,0.274509803921569,1],[0.0588235294117647,1,1],[1,0.0745098039215686,0.650980392156863]],\"lineStyles\":[\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\"],\"lineWidths\":[0.75,0.75,0.75,0.75,0.75,0.75,0.75],\"showGrid\":true,\"showLegend\":false,\"yLimits\":[-1.04846,0.49232]}],\"frameBasedProcessing\":false,\"inputNames\":[\"Lowpass Filter2\",\"Demux1\\/2\",\"Lowpass Filter1\"],\"layoutDimensions\":[1,1],\"timeSpan\":90,\"timeSpanOverrunMode\":\"Wrap\"}";
+    int_T numInputPortsScope3 = 1;
+    int_T scope3ID = 3;
+    real32_T sampleTimes3[1] = { 0.016 };
+
+    INITIALIZE_PLOT(scope3ID,numInputPortsScope3,mobileScopeProperties3,
+                    sampleTimes3);
+  }
+
+  /* End of Scope: '<Root>/Filtered Data (rad)' */
   /* SetupRuntimeResources for Scope: '<Root>/Data (rad) 2' */
   {
     const char* mobileScopeProperties2 =
-      "{\"axesColor\":[0,0,0],\"axesScaling\":\"manual\",\"axesTickColor\":[0.686274509803922,0.686274509803922,0.686274509803922],\"blockType\":\"Scope\",\"displays\":[{\"lineColors\":[[1,1,0.0666666666666667],[0.0745098039215686,0.623529411764706,1],[1,0.411764705882353,0.16078431372549],[0.392156862745098,0.831372549019608,0.0745098039215686],[0.717647058823529,0.274509803921569,1],[0.0588235294117647,1,1],[1,0.0745098039215686,0.650980392156863]],\"lineStyles\":[\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\"],\"lineWidths\":[0.75,0.75,0.75,0.75,0.75,0.75,0.75],\"showGrid\":true,\"showLegend\":false,\"yLimits\":[-0.12458,0.12127]}],\"frameBasedProcessing\":false,\"inputNames\":[\"MATLAB Function2:1\",\"MATLAB Function2:2\",\"MATLAB Function2:3\"],\"layoutDimensions\":[1,1],\"timeSpan\":90,\"timeSpanOverrunMode\":\"Wrap\"}";
+      "{\"axesColor\":[0,0,0],\"axesScaling\":\"manual\",\"axesTickColor\":[0.686274509803922,0.686274509803922,0.686274509803922],\"blockType\":\"Scope\",\"displays\":[{\"lineColors\":[[1,1,0.0666666666666667],[0.0745098039215686,0.623529411764706,1],[1,0.411764705882353,0.16078431372549],[0.392156862745098,0.831372549019608,0.0745098039215686],[0.717647058823529,0.274509803921569,1],[0.0588235294117647,1,1],[1,0.0745098039215686,0.650980392156863]],\"lineStyles\":[\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\"],\"lineWidths\":[0.75,0.75,0.75,0.75,0.75,0.75,0.75],\"showGrid\":true,\"showLegend\":false,\"yLimits\":[-0.125,0.125]}],\"frameBasedProcessing\":false,\"inputNames\":[\"MATLAB Function2:1\",\"MATLAB Function2:2\",\"MATLAB Function2:3\"],\"layoutDimensions\":[1,1],\"timeSpan\":90,\"timeSpanOverrunMode\":\"Wrap\"}";
     int_T numInputPortsScope2 = 1;
     int_T scope2ID = 2;
     real32_T sampleTimes2[1] = { 0.016 };
@@ -524,7 +542,7 @@ void Wrist_initialize(void)
   /* SetupRuntimeResources for Scope: '<Root>/Data (rad) 1' */
   {
     const char* mobileScopeProperties1 =
-      "{\"axesColor\":[0,0,0],\"axesScaling\":\"manual\",\"axesTickColor\":[0.686274509803922,0.686274509803922,0.686274509803922],\"blockType\":\"Scope\",\"displays\":[{\"lineColors\":[[1,1,0.0666666666666667],[0.0745098039215686,0.623529411764706,1],[1,0.411764705882353,0.16078431372549],[0.392156862745098,0.831372549019608,0.0745098039215686],[0.717647058823529,0.274509803921569,1],[0.0588235294117647,1,1],[1,0.0745098039215686,0.650980392156863]],\"lineStyles\":[\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\"],\"lineWidths\":[0.75,0.75,0.75,0.75,0.75,0.75,0.75],\"showGrid\":true,\"showLegend\":false,\"yLimits\":[-0.14933,0.12402]}],\"frameBasedProcessing\":false,\"inputNames\":[\"Gain2\",\"Gain1\",\"Constant\"],\"layoutDimensions\":[1,1],\"timeSpan\":90,\"timeSpanOverrunMode\":\"Wrap\"}";
+      "{\"axesColor\":[0,0,0],\"axesScaling\":\"manual\",\"axesTickColor\":[0.686274509803922,0.686274509803922,0.686274509803922],\"blockType\":\"Scope\",\"displays\":[{\"lineColors\":[[1,1,0.0666666666666667],[0.0745098039215686,0.623529411764706,1],[1,0.411764705882353,0.16078431372549],[0.392156862745098,0.831372549019608,0.0745098039215686],[0.717647058823529,0.274509803921569,1],[0.0588235294117647,1,1],[1,0.0745098039215686,0.650980392156863]],\"lineStyles\":[\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\"],\"lineWidths\":[0.75,0.75,0.75,0.75,0.75,0.75,0.75],\"showGrid\":true,\"showLegend\":false,\"yLimits\":[-0.6518,0.6289]}],\"frameBasedProcessing\":false,\"inputNames\":[\"Gain2\",\"Gain1\",\"Constant\"],\"layoutDimensions\":[1,1],\"timeSpan\":90,\"timeSpanOverrunMode\":\"Wrap\"}";
     int_T numInputPortsScope1 = 1;
     int_T scope1ID = 1;
     real32_T sampleTimes1[1] = { 0.016 };
@@ -534,27 +552,25 @@ void Wrist_initialize(void)
   }
 
   /* End of Scope: '<Root>/Data (rad) 1' */
-  /* SetupRuntimeResources for Scope: '<Root>/Filtered Data (rad)' */
+  /* SetupRuntimeResources for Scope: '<Root>/Unfiltered Data (rad)1' */
   {
-    const char* mobileScopeProperties3 =
-      "{\"axesColor\":[0,0,0],\"axesScaling\":\"manual\",\"axesTickColor\":[0.686274509803922,0.686274509803922,0.686274509803922],\"blockType\":\"Scope\",\"displays\":[{\"lineColors\":[[1,1,0.0666666666666667],[0.0745098039215686,0.623529411764706,1],[1,0.411764705882353,0.16078431372549],[0.392156862745098,0.831372549019608,0.0745098039215686],[0.717647058823529,0.274509803921569,1],[0.0588235294117647,1,1],[1,0.0745098039215686,0.650980392156863]],\"lineStyles\":[\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\"],\"lineWidths\":[0.75,0.75,0.75,0.75,0.75,0.75,0.75],\"showGrid\":true,\"showLegend\":false,\"yLimits\":[-0.14933,0.12402]}],\"frameBasedProcessing\":false,\"inputNames\":[\"Subsystem\\/1\",\"Gyroscope\\/2\",\"Subsystem\\/2\"],\"layoutDimensions\":[1,1],\"timeSpan\":90,\"timeSpanOverrunMode\":\"Wrap\"}";
-    int_T numInputPortsScope3 = 1;
-    int_T scope3ID = 3;
-    real32_T sampleTimes3[1] = { 0.016 };
+    const char* mobileScopeProperties4 =
+      "{\"axesColor\":[0,0,0],\"axesScaling\":\"manual\",\"axesTickColor\":[0.686274509803922,0.686274509803922,0.686274509803922],\"blockType\":\"Scope\",\"displays\":[{\"lineColors\":[[1,1,0.0666666666666667],[0.0745098039215686,0.623529411764706,1],[1,0.411764705882353,0.16078431372549],[0.392156862745098,0.831372549019608,0.0745098039215686],[0.717647058823529,0.274509803921569,1],[0.0588235294117647,1,1],[1,0.0745098039215686,0.650980392156863]],\"lineStyles\":[\"-\",\"-\",\"-\",\"-\",\"-\",\"-\",\"-\"],\"lineWidths\":[0.75,0.75,0.75,0.75,0.75,0.75,0.75],\"showGrid\":true,\"showLegend\":false,\"yLimits\":[-1.41609,0.89789]}],\"frameBasedProcessing\":false,\"inputNames\":[\"Gyroscope\\/1\",\"Gyroscope\\/2\",\"Gyroscope\\/3\"],\"layoutDimensions\":[1,1],\"timeSpan\":90,\"timeSpanOverrunMode\":\"Wrap\"}";
+    int_T numInputPortsScope4 = 1;
+    int_T scope4ID = 4;
+    real32_T sampleTimes4[1] = { 0.016 };
 
-    INITIALIZE_PLOT(scope3ID,numInputPortsScope3,mobileScopeProperties3,
-                    sampleTimes3);
+    INITIALIZE_PLOT(scope4ID,numInputPortsScope4,mobileScopeProperties4,
+                    sampleTimes4);
   }
 
-  /* End of Scope: '<Root>/Filtered Data (rad)' */
+  /* End of Scope: '<Root>/Unfiltered Data (rad)1' */
 
-  /* InitializeConditions for DiscreteIntegrator: '<S3>/Discrete-Time Integrator4' */
-  Wrist_DW.DiscreteTimeIntegrator4_DSTATE = Wrist_P.DiscreteTimeIntegrator4_IC;
-  Wrist_DW.DiscreteTimeIntegrator4_PrevRes = 2;
+  /* InitializeConditions for DiscreteIntegrator: '<Root>/Discrete-Time Integrator1' */
+  Wrist_DW.DiscreteTimeIntegrator1_DSTATE = Wrist_P.DiscreteTimeIntegrator1_IC;
 
-  /* InitializeConditions for DiscreteIntegrator: '<S3>/Discrete-Time Integrator5' */
-  Wrist_DW.DiscreteTimeIntegrator5_DSTATE = Wrist_P.DiscreteTimeIntegrator5_IC;
-  Wrist_DW.DiscreteTimeIntegrator5_PrevRes = 2;
+  /* InitializeConditions for DiscreteIntegrator: '<Root>/Discrete-Time Integrator' */
+  Wrist_DW.DiscreteTimeIntegrator_DSTATE = Wrist_P.DiscreteTimeIntegrator_IC;
   Wrist_LowpassFilter1_Init(&Wrist_DW.LowpassFilter1);
   Wrist_LowpassFilter1_Init(&Wrist_DW.LowpassFilter2);
 
