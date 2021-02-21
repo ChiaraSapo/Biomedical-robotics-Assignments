@@ -14,6 +14,8 @@ Analyze EMG data through MATLAB.
 
 Content: Matlab code and data to try it.
 
+Note: Last part is incorrect: to modify.
+
 ## Ass3
 Move computer cursor via smartphone gyroscope data through Simulink.
 
